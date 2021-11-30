@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SuckTree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    h1 {
+      font-family: Raleway, sans-serif;
+      text-align: center;
+      size: 50px;
+      //font-weight: lighter;
+    }
+    p1 {
+      font-family: Raleway, sans-serif;
+      //font-weight: bold;
+    }
+    #disDiv {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h1>Welcome, {{leName}}</h1>
+    <div id="disDiv">
+    <p1 id = "dezGrades"></p1>
+    </div>
+  </body>
+  <script>
+    let disVar = {{leGrades|tojson}};
+
+    for(let i = 0; i < disVar.length; i++) {
+      if(/[,\-]/.test(disVar[i])) {
+        document.getElementById('dezGrades').innerHTML += ("Teacher: " + disVar[i] + "<br>" + "<br>");
+      }else if(/[-\.]/.test(disVar[i])) {
+        document.getElementById('dezGrades').innerHTML += ("Grade: " + disVar[i] + "<br>" + "<br>");
+      }else {
+        document.getElementById('dezGrades').innerHTML += ("<b>" + "Class: " + disVar[i] + "</b>" + "<br>" + "<br>");
+      }
+    }
+  </script>
+</html>
