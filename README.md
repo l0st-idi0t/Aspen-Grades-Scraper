@@ -1,4 +1,4 @@
 # Aspen-Grades-Scraper
 get grades  
-**yes**
+**yes**  
 ~~it doesnt even work properly 😛~~
